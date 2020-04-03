@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button'
 
 class Form extends React.Component {
 
@@ -38,18 +39,18 @@ class Form extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          name
-          <input type="text" placeholder="shoe name" id="name" value={this.state.name} onChange={this.handleChange}/>
+          <p>name</p>
+          <input className="field" type="text" placeholder="shoe name" id="name" value={this.state.name} onChange={this.handleChange}/>
         </label>
         <label>
-          brand
-          <input type="text" placeholder="shoe brand" id="brand" value={this.state.brand} onChange={this.handleChange}/>
+          <p>brand</p>
+          <input className="field" type="text" placeholder="shoe brand" id="brand" value={this.state.brand} onChange={this.handleChange}/>
         </label>
         <label id="post-form">
-          qty
-          <input placeholder="0" type="number" id="qty" value={this.state.body} onChange={this.handleChange}/>
-        </label>
-        <input type="submit" value="share"/>
+          <p>qty</p>
+          <input className="field" placeholder="0" type="number" id="qty" value={this.state.body} onChange={this.handleChange}/>
+        </label><br/><br/>
+        <Button variant="info" size="sm"><input className="input" type="submit" value="submit"/></Button>
       </form>
     )
   }

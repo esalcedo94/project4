@@ -6,7 +6,7 @@ class App extends React.Component {
   state = {
     view: {
       page: "home",
-      pageTitle: "shoe index"
+      pageTitle: "Home"
     },
     formInputs: {
       name: null,
@@ -58,11 +58,13 @@ class App extends React.Component {
   render() {
     return (
       <div class="container">
-        <header>
+        <header onClick={() => {
+          this.handleView("home");
+        }}>
+        <div className="logo">sneakfreaks</div>
           <img src="https://www.riskified.com/blog/wp-content/uploads/2017/01/BlogBanner_89_sneakers-info-01-1.png"></img>
         </header>
         <nav>
-          <h1>NAVIGATE</h1>
           <ul>
             <li
               onClick={() => {
