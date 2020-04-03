@@ -1,9 +1,7 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import Main from './components/Home.js'
 
-class App extends Component {
-  render() {
+class App extends React.Component {
     state = {
       view: {
         page: "home",
@@ -17,12 +15,12 @@ class App extends Component {
       }
     };
 
-    handleView= (view, post) => {
+    handleView= (view, shoe) => {
       let pageTitle =""
       let formInputs ={
         name: '',
-        brand: '', 
-        qty: null, 
+        brand: '',
+        qty: null,
         id: null
       }
       switch (view){
@@ -32,17 +30,24 @@ class App extends Component {
         case 'shoe':
           pageTitle = 'Shoe'
           break;
-        case 'addShoe': 
+        case 'addShoe':
           pageTitle = "add a shoe"
           break;
         case 'editShoe':
           pageTitle = 'edit a shoe'
+          formInputs = {
+            name: shoe.name,
+            brand: shoe.brand,
+            qty: shoe.qty,
+            id: shoe.id,
+
+          }
           break;
         default:
           break;
       }
       this.setState({
-        view:{ 
+        view:{
           page: view,
           pageTitle: pageTitle
         },
@@ -50,8 +55,24 @@ class App extends Component {
       })
     }
 
-    return <></>;
+    render() {
+      return (
+          <div className='container'>
+              <aside>
+              <h1>NAVIGATE</h1>
+                <ul>
+                  <li onClick={() => {
+                    this.handleView('home')
+                  }}>home</li>
+                  <li onClick={() => {
+                    this.handleView('addShoe')
+                  }}>add shoe</li>
+                </ul>
+              </aside>
+          <Main view={this.state.view} handleView={this.handleView} formInputs={this.state.formInputs}/>
+        </div>
+      )
+    }
   }
-}
 
 export default App;

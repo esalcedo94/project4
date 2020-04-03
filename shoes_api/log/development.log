@@ -90,3 +90,109 @@ Processing by ShoesController#index as HTML
 Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.9ms | Allocations: 1350)
 
 
+Started GET "/" for ::1 at 2020-04-03 11:23:12 -0400
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/chrisbellaro/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/chrisbellaro/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.8ms | Allocations: 295)
+Completed 200 OK in 35ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 1543)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 11:23:16 -0400
+Processing by ShoesController#index as HTML
+  [1m[36mShoe Load (13.9ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 62ms (Views: 18.6ms | ActiveRecord: 38.1ms | Allocations: 5102)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 11:39:19 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (0.8ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms | Allocations: 1460)
+
+
+Started PUT "/shoes/5" for ::1 at 2020-04-03 11:39:32 -0400
+Processing by ShoesController#update as HTML
+  Parameters: {"name"=>"Air Force One", "brand"=>"Nike", "qty"=>"50", "id"=>"5", "shoe"=>{"id"=>"5", "name"=>"Air Force One", "brand"=>"Nike", "qty"=>"50"}}
+  [1m[36mShoe Load (7.8ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes" WHERE "shoes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shoes_controller.rb:44:in `set_shoe'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shoes_controller.rb:29:in `update'
+  [1m[36mShoe Update (8.2ms)[0m  [1m[33mUPDATE "shoes" SET "name" = $1, "qty" = $2, "updated_at" = $3 WHERE "shoes"."id" = $4[0m  [["name", "Air Force One"], ["qty", 50], ["updated_at", "2020-04-03 15:39:32.630877"], ["id", 5]]
+  ↳ app/controllers/shoes_controller.rb:29:in `update'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shoes_controller.rb:29:in `update'
+Completed 200 OK in 72ms (Views: 0.4ms | ActiveRecord: 19.3ms | Allocations: 4556)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 11:39:32 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (0.6ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.6ms | Allocations: 1352)
+
+
+Started DELETE "/shoes/5" for ::1 at 2020-04-03 11:39:36 -0400
+Processing by ShoesController#destroy as HTML
+  Parameters: {"id"=>"5", "shoe"=>{}}
+  [1m[36mShoe Load (0.3ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes" WHERE "shoes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shoes_controller.rb:44:in `set_shoe'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shoes_controller.rb:38:in `destroy'
+  [1m[36mShoe Destroy (0.4ms)[0m  [1m[31mDELETE FROM "shoes" WHERE "shoes"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/shoes_controller.rb:38:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shoes_controller.rb:38:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 2.1ms | Allocations: 2213)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 11:42:06 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (410.9ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 424ms (Views: 12.2ms | ActiveRecord: 410.9ms | Allocations: 1238)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 11:42:27 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (0.5ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 82ms (Views: 81.6ms | ActiveRecord: 0.5ms | Allocations: 1239)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 11:42:35 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (0.4ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 1238)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 11:42:41 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (6.2ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 3.8ms | ActiveRecord: 6.2ms | Allocations: 1239)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 11:42:43 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (3.7ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 3.7ms | Allocations: 1238)
+
+
+Started POST "/shoes" for ::1 at 2020-04-03 11:42:51 -0400
+Processing by ShoesController#create as HTML
+  Parameters: {"name"=>"Air Force One", "brand"=>"Nike", "qty"=>"28", "id"=>nil, "shoe"=>{"id"=>nil, "name"=>"Air Force One", "brand"=>"Nike", "qty"=>"28"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shoes_controller.rb:20:in `create'
+  [1m[36mShoe Create (3.6ms)[0m  [1m[32mINSERT INTO "shoes" ("name", "brand", "qty", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Air Force One"], ["brand", "Nike"], ["qty", 28], ["created_at", "2020-04-03 15:42:51.535386"], ["updated_at", "2020-04-03 15:42:51.535386"]]
+  ↳ app/controllers/shoes_controller.rb:20:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shoes_controller.rb:20:in `create'
+Completed 201 Created in 14ms (Views: 0.8ms | ActiveRecord: 5.2ms | Allocations: 2467)
+
+
