@@ -1,6 +1,6 @@
 import React from "react";
 import Main from "./components/Home.js";
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 
 class App extends React.Component {
   state = {
@@ -57,8 +57,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <Container>
-        <aside>
+      <div class="container">
+        <header>
+          <img src="https://www.riskified.com/blog/wp-content/uploads/2017/01/BlogBanner_89_sneakers-info-01-1.png"></img>
+        </header>
+        <nav>
           <h1>NAVIGATE</h1>
           <ul>
             <li
@@ -76,13 +79,13 @@ class App extends React.Component {
               add shoe
             </li>
           </ul>
-        </aside>
+        </nav>
         <Main
           view={this.state.view}
           handleView={this.handleView}
           formInputs={this.state.formInputs}
         />
-      </Container>
+      </div>
     );
   }
 }

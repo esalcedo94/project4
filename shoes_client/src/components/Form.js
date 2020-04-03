@@ -47,7 +47,7 @@ class Form extends React.Component {
         </label>
         <label id="post-form">
           qty
-          <textarea placeholder="qty" type="number" id="qty" value={this.state.body} onChange={this.handleChange}></textarea>
+          <input placeholder="0" type="number" id="qty" value={this.state.body} onChange={this.handleChange}/>
         </label>
         <input type="submit" value="share"/>
       </form>
