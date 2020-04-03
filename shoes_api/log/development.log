@@ -1098,3 +1098,54 @@ Processing by ShoesController#index as */*
 Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 3.0ms | Allocations: 1156)
 
 
+Started GET "/shoes" for ::1 at 2020-04-03 17:01:02 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (1.6ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.6ms | Allocations: 1229)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 17:06:01 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (7.4ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 13.6ms | ActiveRecord: 7.4ms | Allocations: 1156)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 17:07:37 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (36.1ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 41ms (Views: 3.7ms | ActiveRecord: 36.1ms | Allocations: 1156)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 17:07:57 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (7.3ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 6.4ms | ActiveRecord: 7.3ms | Allocations: 1156)
+
+
+Started PUT "/shoes/3" for ::1 at 2020-04-03 17:08:14 -0400
+Processing by ShoesController#update as HTML
+  Parameters: {"name"=>"Retro 3", "brand"=>"Air Jordan", "qty"=>50, "id"=>"3", "shoe"=>{"id"=>"3", "name"=>"Retro 3", "brand"=>"Air Jordan", "qty"=>50}}
+  [1m[36mShoe Load (0.8ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes" WHERE "shoes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shoes_controller.rb:44:in `set_shoe'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 1070)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 17:08:14 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (0.9ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.9ms | Allocations: 1156)
+
+
+Started GET "/shoes" for ::1 at 2020-04-03 17:10:33 -0400
+Processing by ShoesController#index as */*
+  [1m[36mShoe Load (0.7ms)[0m  [1m[34mSELECT "shoes".* FROM "shoes"[0m
+  ↳ app/controllers/shoes_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.7ms | Allocations: 1156)
+
+
